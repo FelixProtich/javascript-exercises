@@ -73,7 +73,7 @@ describe("functions", function() {
             // Declare a constant 'answer' with the correct result.
             // If you call getContext() here, you're a cheater! :)
             // ✏️ ADD CODE HERE ✏️
-
+            let answer;
             ////////////////////////////////////////////////////////////////////
 
             const result = getContext(); // <--- called without explicit context
@@ -97,7 +97,9 @@ describe("functions", function() {
             // and 'answerThirdResult' with the correct results.
             // If you call getContext() here, you're a cheater! :)
             // ✏️ ADD CODE HERE ✏️
-
+            const answerFirstResult= getContext();
+            const answerSecondResult = getContext.call(context);
+            const answerThirdResult = getContext();
             ////////////////////////////////////////////////////////////////////
 
             // First we call the function without an explicit context
