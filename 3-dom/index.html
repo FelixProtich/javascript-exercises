@@ -60,6 +60,7 @@
   <script>
     // TODO: Add your code here
     function playSound(event){
+      //console.log(event.key, event.keyCode);
       console.log(event.key, keyCode );
       const key = document.querySelector(`div[data-key="${event.keyCode}"]`);
       const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
@@ -72,13 +73,13 @@
         audio.play();
       }
       function removeTransition(event){
-        if(event.propertyName ==="transform"){
+        if(event.propertyName === "transform"){
           //console.log(event);
           event.target.classList.remove("playing");
         }
       }
       const key = Array.from(document.querySelectorAll(".key"));
-      keys.forEach((key) =>key.addEventListener("transitioned", removeTransition));
+      keys.forEach((key)=> key.addEventListener("transitionend", removeTransition));
 
     window.addEventListener("keydown", playSound);
   </script>
